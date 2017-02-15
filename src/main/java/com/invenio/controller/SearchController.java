@@ -1,11 +1,15 @@
 package com.invenio.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.invenio.bean.Credit;
 import com.invenio.bean.Person;
 import com.invenio.service.SearchService;
 
@@ -36,10 +40,11 @@ public class SearchController {
 	@RequestMapping(value="/search",method=RequestMethod.POST)
 	public String findPerson(Person p,Model m){
 		System.out.println("In FIND Person");
-		boolean x=sservice.checkPerson(p);
-		if(x){
+		Person x=sservice.checkPerson(p);
+		System.out.println(p.getName());
+		if(x!=null){
 			System.out.println("Person details verified");
-			m.addAttribute("pesr2",p);
+			m.addAttribute("pers2",x);
 			return "detailsDisplay";
 			
 		}
@@ -48,5 +53,18 @@ public class SearchController {
 		
 		return "redirect:/search";
 	}
+	
+	@RequestMapping(value="/crime",method=RequestMethod.GET)
+	public String showSearch(@RequestParam String id,Model model){
+		
+		System.out.println("In Search Controller");
+		int uniqueid=Integer.parseInt(id);
+		List<Credit> credits=sservice.checkCreditofPerson(uniqueid);
+		model.addAttribute("cred",credits);
+		
+		
+		return "detailsDisplay";
+	} 
+	
 
 }

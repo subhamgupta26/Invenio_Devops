@@ -2,12 +2,15 @@ package com.invenio.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.invenio.bean.Credit;
 import com.invenio.bean.Person;
 
 @Repository(value="sdao")
@@ -28,10 +31,11 @@ public class SearchDAOImpl implements SearchDao {
 
 
 	@Override
-	public boolean findRecord(Person p) {
-		
+	public Person findRecord(Person p) {
+		Person p1=null;
 	try{
-		Person p1=template.queryForObject("select * from person where aadhar_id="+p.getUnique_id(),
+		
+		p1=template.queryForObject("select * from person where aadhar_id="+p.getUnique_id(),
 	
 				
 				
@@ -53,11 +57,53 @@ public class SearchDAOImpl implements SearchDao {
 	}
 	catch(org.springframework.dao.EmptyResultDataAccessException exception){
 		System.out.println("username or password invalid");
-		return false;
+		return null;
 	}
-	
-	return true;
+	p1.setUnique_id(p.getUnique_id());
+	System.out.println(p1.getName());
+	return p1;
 		
 	}
+	
+
+	
+	public List<Credit> findCreditRecord(int uniqueid) {
+		
+		System.out.println("In Search impl");
+		List<Credit> credits=new ArrayList<Credit>();
+	try{
+		
+		credits= template.query("select * from credit where aadhar_id="+uniqueid, new RowMapper<Credit>(){
+
+			@Override
+			public Credit mapRow(ResultSet rs, int rownum)
+					throws SQLException {
+				
+				Credit c2=new Credit();
+				c2.setCreditId(rs.getInt(1));
+				c2.setAccountNo(rs.getInt(3));
+				c2.setBankName(rs.getString(4));
+				c2.setBalance(rs.getInt(5));
+				
+				return c2;
+			}
+			
+		});
+		
+	}
+	catch(org.springframework.dao.EmptyResultDataAccessException exception){
+		System.out.println("username or password invalid");
+		return null;
+	}
+	for(Credit cc:credits){
+	cc.setUniqueId(uniqueid);
+	System.out.println(cc.getAccountNo());
+	}
+	
+	return credits;
+		
+	}
+	
+	 
 
 }

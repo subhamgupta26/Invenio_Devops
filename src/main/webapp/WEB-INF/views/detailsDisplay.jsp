@@ -1,17 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
+
+<link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
+	<div class="wholecontainer">
+		<header>
+			<nav>
+				<ul class="navbar">
+					<li>UserName</li>
 
-hey there
-${pers2}	<br>
+					<li class="navitem"><img src="images/notification.png"
+						alt=bell></li>
+					<li class="navitem"><img src="images/userDefault.png"
+						class=thumbnail alt=profile></li>
+					<li class="navitem"><img src="images/logout.jpg"
+						class=thumbnail alt=profile></li>
 
+				</ul>
+			</nav>
+		</header>
+
+		<div class="container">
+
+			<img class="googlelogo" src="images/logo.png" alt=" logo"
+				style="height: 180px; width: 100px"> ${pers2 }
+			<div>
+				<a
+					href="http://localhost:8080/Invenio/crime?id=${pers2.getUnique_id() }">Crime
+					Search</a> <a
+					href="http://localhost:8080/Invenio/credit?id=${pers2.getUnique_id() }">Credit
+					Search</a>
+			
+			</div>
+		</div>
+	credit Record=${cred }
+
+	</div>
 
 </body>
 </html>

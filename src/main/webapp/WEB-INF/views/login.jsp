@@ -10,7 +10,10 @@
   <!-- CORE CSS-->
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+   <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css" />" />
+	
 <style type="text/css">
+
 html,
 body {
     height: 100%;
@@ -35,7 +38,10 @@ body {
 </head>
 
 <body class="white" style="background-image: url('<c:url value="/resources/images/acb.jpg" />')">
-
+	
+	<div id="large-header" class="large-header">
+		<canvas id="demo-canvas"></canvas>
+	</div>
 	
   <div id="login-page" class="row">
     <div class="col s12 z-depth-6 card-panel">
@@ -101,6 +107,9 @@ body {
  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <!--materialize js-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+  <script src="<c:url value="/resources/scripts/TweenLite.min.js" />"></script>
+           <script src="<c:url value="/resources/scripts/EasePack.min.js" />"></script>
+           <script src="<c:url value="/resources/scripts/demo-1.js" />"></script>
 
 
 </body>

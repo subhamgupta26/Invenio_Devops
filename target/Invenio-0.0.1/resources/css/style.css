@@ -1,14 +1,17 @@
 body {
     margin: 0px;
+    height: 100%;
+    
+}
+
+html{
+	 height: 100%;
 }
 
 header {
     background-color: white;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
-    position: fixed;
-    top: 0px;
-    width: 100%;
 }
 
 header .row>div:nth-child(1) {
@@ -24,7 +27,10 @@ header .row>div:last-child>div{
 }
 
 main {
-    margin: 50px 0px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    text-align: center;
 }
 
 #searchContainer {
@@ -67,9 +73,6 @@ main {
 .tabWork .tabsContainer li{
     margin: 0px 0px;
 }
-main {
-    text-align: center;
-}
 #displayBox {
     margin: 20px 30px;
     width: 900px;
@@ -105,8 +108,6 @@ main {
 footer {
     background-color: #dd8800;
     height: 50px;
-    position: fixed;
-    bottom: 0px;
     width: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
     color: white;

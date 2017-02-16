@@ -47,7 +47,7 @@ function tabSelect(num) {
         }
     }
     else {
-        $(".tabWork .frams").html('<div id="logoImg"><img src="images/logo.png" alt="invenio"></div>');
+        $(".tabWork .frams").html('<div id="logoImg"><img src="'+logourl+'" alt="invenio"></div>');
    }
 }
 

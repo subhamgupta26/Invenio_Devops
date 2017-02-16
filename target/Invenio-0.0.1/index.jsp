@@ -1,6 +1,8 @@
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -13,17 +15,25 @@
     <![endif]-->
 </head>
 <body>
+
     <header>
         <div class="col-sm-6"><img src="<c:url value="/resources/images/logo2.jpg" />" alt=""></div>
         <div class="col-sm-6">
             <div>
-                <a class="btn btn-success">Login</a>
+                <a class="btn btn-success" href="<c:url value="/login" />">Login</a>
                 <a class="btn btn-info" href="">Register</a>
             </div>
         </div>
     </header>
-    <main style="background-image: url('<c:url value="/resources/images/indexb.jpg" />')" >
-        <div class="col-sm-6">Get records<br>Of a <b>person</b> with one search</div>
+   <fmt:bundle basename="environment">
+  
+  
+   
+   
+    <main style="background-image: url('<c:url value="/resource/images/" /><fmt:message key="env.background_image"/>')" > </fmt:bundle>
+        <div class="col-sm-6">Get <b>Records</b><br>of a <b>Person</b> with one<br><b>Search</div>
+      
+        
         <div class="col-sm-6">
         </div>
     </main>

@@ -39,17 +39,18 @@ main {
 }
 #searchBox {
     display: inline-block;
+    min-width: 410px;
 }
 #searchBox>input, #searchBox>button {
     vertical-align: center;
     float: left;
 }
-#queryInput {
+.searchbar {
     font-size: 24px;
-    width: 400px;
+    width: 350px;
     color: #444;
 }
-#queryInput::-webkit-outer-spin-button, #queryInput::-webkit-inner-spin-button {
+.searchbar::-webkit-outer-spin-button, #queryInput::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0px;
 }

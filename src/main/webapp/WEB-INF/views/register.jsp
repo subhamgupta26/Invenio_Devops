@@ -31,7 +31,7 @@ body {
   
 </head>
 
-<body class="white">
+<body class="white" style="background-image: url('<c:url value="/resources/images/acb.jpg" />')">
 
 
   <div id="login-page" class="row">
@@ -39,7 +39,7 @@ body {
       <f:form modelAttribute="pes22" class="login-form" method="POST">
          <div class="row">
           <div class="input-field col s12 center">
-            <img src="images/logo.png" alt="" class="responsive-img valign profile-image-login">
+            <img src="<c:url value="/resources/images/logo.png" />" alt="" class="responsive-img valign profile-image-login">
           </div>
         </div>
         <div class="row margin">

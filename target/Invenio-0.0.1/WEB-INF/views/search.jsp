@@ -32,7 +32,7 @@
             <div class="col-sm-3"><img height="35" src="<c:url value="/resources/images/logo2.jpg" />" alt="logo" /></div>
             <div class="col-sm-6" id="searchContainer">
            <f:form modelAttribute="pers" method="post" >
-                <div id="searchBox" class="form-group"><f:input type="text" class="searchbar"  path="unique_id"/>
+                <div id="searchBox" class="form-group"><f:input type="text" class="searchbar form-control"  path="unique_id"/>
                 <button type="submit" data-toggle="tooltip" data-placement="bottom" title="Search" id="searchBtn" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
             </f:form>
             </div>
@@ -48,7 +48,7 @@
             </div>
         </div>
     </header>
-    <main style="background-image: url('<c:url value="/resources/images/flag_in.jpg" />')">
+    <main style="background-image: url('<c:url value="/resources/images/india_flag.jpg" />')">
         <div id="displayBox">
             <div>
                 <div class="tabWork" record="">

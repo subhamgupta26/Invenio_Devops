@@ -2,7 +2,7 @@ package com.invenio.controller;
 
 
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +40,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String s(Admin person){
+	public String s(Admin person,RedirectAttributes redirectAttributes){
+		
 		System.out.println(person);
 		System.out.println("In Controller");
 		boolean x=service.checkSignIn(person);
@@ -49,7 +50,9 @@ public class AdminController {
 		if(x){
 			System.out.println("verified");
 	
-		 
+		 String pid=person.getUsername();
+		
+		 redirectAttributes.addFlashAttribute("dataForNextPage", pid);
 				 
 			return "redirect:/search.do";
 			

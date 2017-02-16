@@ -1,11 +1,11 @@
+<%@page import="org.springframework.ui.Model"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="f" %>
 <!DOCTYPE html>
-<%=request.getParameter("username") %>
 
 <%
-   String name = request.getParameter( "username" );
-	
+
+	String name=(String)request.getAttribute("uid");
    session.setAttribute( "name", name );
    
 %>
@@ -39,7 +39,7 @@
             <div class="col-sm-3">
                 <div>
                     <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">${pers.getUnique_id() }                          <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><%=session.getAttribute("name") %>                       <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                         <li><a href="#">Sign Out</a></li>
                         </ul>

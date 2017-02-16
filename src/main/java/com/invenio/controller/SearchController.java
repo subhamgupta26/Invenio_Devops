@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,9 +32,11 @@ public class SearchController {
 
 	
 	@RequestMapping(value="/search",method=RequestMethod.GET)
-	public String showSearch(Model model){
+	public String showSearch(@ModelAttribute("dataForNextPage") String pid, Model model){
 		Person p=new Person();
 		model.addAttribute("pers",p);
+		model.addAttribute("uid",pid);
+		System.out.println(pid);
 		
 		return "search";
 	}
@@ -56,12 +59,16 @@ public class SearchController {
 	}
 	
 	@RequestMapping(value="/credit",method=RequestMethod.GET)
-	public String showSearch(@RequestParam String id,Model model){
+	public String showCreditSearch(@RequestParam String id,Model model){
 		
 		System.out.println("In Search Controller");
 		long uniqueid=Long.parseLong(id);
+		Person pp1=new Person();
+		pp1.setUnique_id(uniqueid);
+		Person pp=sservice.checkPerson(pp1);
 		List<Credit> credits=sservice.checkCreditofPerson(uniqueid);
 		model.addAttribute("cred",credits);
+		model.addAttribute("pers2",pp);
 		
 		
 		return "detailsDisplay";
@@ -72,8 +79,12 @@ public class SearchController {
 		
 		System.out.println("In Search Controller");
 		long uniqueid=Long.parseLong(id);
+		Person pp1=new Person();
+		pp1.setUnique_id(uniqueid);
+		Person pp=sservice.checkPerson(pp1);
 		List<Criminal> crimes=sservice.checkCrimeofPerson(uniqueid);
 		model.addAttribute("crim",crimes);
+		model.addAttribute("pers2",pp);
 		
 		
 		return "detailsDisplay";

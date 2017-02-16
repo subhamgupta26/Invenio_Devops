@@ -17,13 +17,13 @@
         <div class="col-sm-6"><img src="<c:url value="/resources/images/logo2.jpg" />" alt=""></div>
         <div class="col-sm-6">
             <div>
-                <a class="btn btn-success">Login</a>
+                <a class="btn btn-success" href="<c:url value="/login" />">Login</a>
                 <a class="btn btn-info" href="">Register</a>
             </div>
         </div>
     </header>
     <main style="background-image: url('<c:url value="/resources/images/indexb.jpg" />')" >
-        <div class="col-sm-6">Get records<br>Of a <b>person</b> with one search</div>
+        <div class="col-sm-6">Get <b>Records</b><br>of a <b>Person</b> with one<br><b>Search</div>
         <div class="col-sm-6">
         </div>
     </main>

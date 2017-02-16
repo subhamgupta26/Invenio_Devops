@@ -22,17 +22,17 @@
 	<property name="dataSource" ref="ds"></property>
 </bean>
 
-<!-- <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="ds" autowire="byName" >
+<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="ds" autowire="byName" >
 	<property name="driverClassName" value="${db.driver}"/>
 		<property name="url" value="${db.url}"/>
 		<property name="username" value="${db.username}"/>
 		<property name="password" value="${db.password}"/>
-</bean> -->
+</bean>
 
 
 
 
-<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<!-- <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
 <property value="com.mysql.jdbc.Driver" name="driverClassName"/>
 
@@ -42,7 +42,7 @@
 
 <property value="root" name="password"/>
 
-</bean>
+</bean> -->
 
 <!-- <bean class="com.invenio.dao.SignInDAOImpl" id="impl">
 	<property name="template" ref="template"></property>

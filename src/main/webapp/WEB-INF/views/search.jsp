@@ -11,9 +11,9 @@
 %>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css" />" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,8 +22,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+    	var logourl = "<c:url value="/resources/images/logo.png" />";
+    </script>
 </head>
-<body style="background-image: url('<c:url value="/resources/images/flag.jpg" />')" >
+<body>
     <header>
         <div class="row">
             <div class="col-sm-3"><img height="35" src="<c:url value="/resources/images/logo2.jpg" />" alt="logo" /></div>
@@ -45,7 +48,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main style="background-image: url('<c:url value="/resources/images/flag_in.jpg" />')">
         <div id="displayBox">
             <div>
                 <div class="tabWork" record="">

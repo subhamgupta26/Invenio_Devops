@@ -1,5 +1,6 @@
 <%@page import="org.springframework.ui.Model"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="f" %>
 <!DOCTYPE html>
 
@@ -48,7 +49,8 @@
             </div>
         </div>
     </header>
-    <main style="background-image: url('<c:url value="/resources/images/india_flag.jpg" />')">
+     <fmt:bundle basename="environment">
+    <main style="background-image: url('<c:url value="/resources/images/" /><fmt:message key="env.flag_image"/>')"></fmt:bundle>
         <div id="displayBox">
             <div>
                 <div class="tabWork" record="">

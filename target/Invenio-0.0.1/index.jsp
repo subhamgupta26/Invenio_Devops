@@ -26,11 +26,7 @@
         </div>
     </header>
    <fmt:bundle basename="environment">
-  
-  
-   
-   
-    <main style="background-image: url('<c:url value="/resource/images/" /><fmt:message key="env.background_image"/>')" > </fmt:bundle>
+     <main style="background-image: url('<c:url value="/resources/images/" /><fmt:message key="env.background_image"/>')" > </fmt:bundle>
         <div class="col-sm-6">Get <b>Records</b><br>of a <b>Person</b> with one<br><b>Search</div>
       
         

@@ -30,4 +30,10 @@ public class SignInService {
 		return dao.signIn(p);
 	}
 	
+
+	public void registerPerson(Admin p){
+		System.out.println("Inside signIn Service");
+		dao.register(p);
+	}
+	
 }

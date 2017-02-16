@@ -51,6 +51,17 @@ public class SignInDAOImpl implements SignInDAO{
 		return true;
 	}
 
+	
+	
+
+	@Override
+	public void register(Admin p){
+		System.out.println("In sign in DAO register");
+		String s="insert into admin (username,password) values (?,?)";
+		
+		template.update(s, new Object[]{p.getUsername(),p.getPassword()});
+	}
+
 	public JdbcTemplate getTemplate() {
 		return template;
 	}
@@ -58,5 +69,6 @@ public class SignInDAOImpl implements SignInDAO{
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
 	}
+
 
 }

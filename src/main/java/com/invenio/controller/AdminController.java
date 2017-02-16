@@ -64,6 +64,25 @@ public class AdminController {
 		}
 		return "redirect:/login";
 	}
+	
+
+	@RequestMapping(value="/register",method=RequestMethod.GET)
+	public String getregister(Model model){
+		Admin p = new Admin();
+		model.addAttribute("pes22",p);
+		
+		return "register";
+	}
+	
+	@RequestMapping(value="/register",method=RequestMethod.POST)
+	public String Register(Admin a){
+		System.out.println(a);
+		System.out.println("In register Controller");
+		
+		service.registerPerson(a);
+		return "redirect:/login";
+
+	}
 
 	
 

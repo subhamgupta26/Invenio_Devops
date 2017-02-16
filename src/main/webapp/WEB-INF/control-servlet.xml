@@ -22,11 +22,11 @@
 	<property name="dataSource" ref="ds"></property>
 </bean>
 
-<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="ds">
-	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/invenioind"/>
-		<property name="username" value="root"/>
-		<property name="password" value="root"/>
+<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="ds" autowire="byName" >
+	<property name="driverClassName" value="${db.driver}"/>
+		<property name="url" value="${db.url}"/>
+		<property name="username" value="${db.username}"/>
+		<property name="password" value="${db.password}"/>
 </bean>
 
 <!-- <bean class="com.invenio.dao.SignInDAOImpl" id="impl">
@@ -36,6 +36,9 @@
 </bean> -->
 <context:annotation-config></context:annotation-config>
 <context:component-scan base-package="com.invenio"></context:component-scan>
+
+
+<context:property-placeholder location="classpath:environment.properties"/>
 
 <mvc:resources mapping="/resources/**" location="/resources/theme1/"
 	cache-period="31556926"/>

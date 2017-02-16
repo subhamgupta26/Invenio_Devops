@@ -1,5 +1,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="f" %>
 <!DOCTYPE html>
+<%=request.getParameter("username") %>
+
+<%
+   String name = request.getParameter( "username" );
+	
+   session.setAttribute( "name", name );
+   
+%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,13 +28,15 @@
         <div class="row">
             <div class="col-sm-3"><img height="35" src="<c:url value="/resources/images/logo2.jpg" />" alt="logo" /></div>
             <div class="col-sm-6" id="searchContainer">
-                <div id="searchBox" class="form-group"><input type="number" class="form-control" id="queryInput" name="query" />
-                <button data-toggle="tooltip" data-placement="bottom" title="Search" id="searchBtn" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
+           <f:form modelAttribute="pers" method="post" >
+                <div id="searchBox" class="form-group"><f:input type="text" class="searchbar"  path="unique_id"/>
+                <button type="submit" data-toggle="tooltip" data-placement="bottom" title="Search" id="searchBtn" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
+            </f:form>
             </div>
             <div class="col-sm-3">
                 <div>
                     <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">User Name                            <span class="caret"></span></button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">${pers.getUnique_id() }                          <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                         <li><a href="#">Sign Out</a></li>
                         </ul>

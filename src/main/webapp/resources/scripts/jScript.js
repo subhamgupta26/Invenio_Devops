@@ -29,7 +29,7 @@ function tabSelect(num) {
         if(tabsMeta.tabSet.attr("data") == 0) {
         $(".tabWork .frams").html("Loading...");
             $.ajax({
-                url: "aaa.php",
+                url: "/crime?id=",
                 success: function(result){
                     $("#data-"+num).html(result);
                     tabsMeta.tabSet.attr("data","1");

@@ -2,30 +2,30 @@ package com.invenio.bean;
 
 public class Credit {
 
-	 private int creditId,uniqueId,accountNo,balance;
+	 private long creditId,uniqueId,accountNo,balance;
 	 private String bankName;
-	public int getCreditId() {
+	public long getCreditId() {
 		return creditId;
 	}
-	public void setCreditId(int creditId) {
+	public void setCreditId(long creditId) {
 		this.creditId = creditId;
 	}
-	public int getUniqueId() {
+	public long getUniqueId() {
 		return uniqueId;
 	}
-	public void setUniqueId(int uniqueId) {
+	public void setUniqueId(long uniqueId) {
 		this.uniqueId = uniqueId;
 	}
-	public int getAccountNo() {
+	public long getAccountNo() {
 		return accountNo;
 	}
-	public void setAccountNo(int accountNo) {
+	public void setAccountNo(long accountNo) {
 		this.accountNo = accountNo;
 	}
-	public int getBalance() {
+	public long getBalance() {
 		return balance;
 	}
-	public void setBalance(int balance) {
+	public void setBalance(long balance) {
 		this.balance = balance;
 	}
 	public String getBankName() {
@@ -34,7 +34,7 @@ public class Credit {
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
 	}
-	public Credit(int creditId, int uniqueId, int accountNo, int balance,
+	public Credit(long creditId, long uniqueId, long accountNo, long balance,
 			String bankName) {
 		super();
 		this.creditId = creditId;

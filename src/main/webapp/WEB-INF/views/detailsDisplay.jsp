@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
+<%= session.getAttribute( "name" ) %>
 <html>
 <head>
 <title></title>
@@ -35,10 +36,12 @@
 					Search</a> <a
 					href="http://localhost:8080/Invenio/credit?id=${pers2.getUnique_id() }">Credit
 					Search</a>
-			
+
 			</div>
 		</div>
-	credit Record=${cred }
+		credit Record=${cred }
+		
+		crime Record=${crim }
 
 	</div>
 

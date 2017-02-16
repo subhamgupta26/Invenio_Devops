@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.invenio.bean.Credit;
+import com.invenio.bean.Criminal;
 import com.invenio.bean.Person;
 import com.invenio.service.SearchService;
 
@@ -54,13 +55,25 @@ public class SearchController {
 		return "redirect:/search";
 	}
 	
-	@RequestMapping(value="/crime",method=RequestMethod.GET)
+	@RequestMapping(value="/credit",method=RequestMethod.GET)
 	public String showSearch(@RequestParam String id,Model model){
 		
 		System.out.println("In Search Controller");
-		int uniqueid=Integer.parseInt(id);
+		long uniqueid=Long.parseLong(id);
 		List<Credit> credits=sservice.checkCreditofPerson(uniqueid);
 		model.addAttribute("cred",credits);
+		
+		
+		return "detailsDisplay";
+	} 
+	
+	@RequestMapping(value="/crime",method=RequestMethod.GET)
+	public String showSearchCriminal(@RequestParam String id,Model model){
+		
+		System.out.println("In Search Controller");
+		long uniqueid=Long.parseLong(id);
+		List<Criminal> crimes=sservice.checkCrimeofPerson(uniqueid);
+		model.addAttribute("crim",crimes);
 		
 		
 		return "detailsDisplay";

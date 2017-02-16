@@ -48,7 +48,7 @@ body {
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
-            <f:input class="validate" type="email" path="username"/>
+            <f:input class="validate" type="email" path="username" name="username"/>
             <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
           </div>
         </div>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.invenio.bean.Credit;
+import com.invenio.bean.Criminal;
 import com.invenio.bean.Person;
 import com.invenio.dao.SearchDao;
 
@@ -39,12 +40,23 @@ public class SearchService {
 		
 	}
 	
-	public List<Credit> checkCreditofPerson(int uniqueid){
+	public List<Credit> checkCreditofPerson(long uniqueid){
 		System.out.println("In Search Service");
 		List<Credit> credits=sdao.findCreditRecord(uniqueid);
+		System.out.println(credits);
 		
 		
 		return credits;
+		
+	}
+	
+	public List<Criminal> checkCrimeofPerson(long uniqueid){
+		System.out.println("In Search Service");
+		List<Criminal> crimes=sdao.findCrimeRecord(uniqueid);
+		System.out.println(crimes);
+		
+		
+		return crimes;
 		
 	}
 	

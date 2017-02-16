@@ -18,19 +18,48 @@
             <version>1.1</version>
             <executions>
                <execution>
-                  <phase>in</phase>
+                  <phase>test</phase>
                   <goals>
                      <goal>run</goal>
                   </goals>
                   <configuration>
                   <tasks>
                      <echo>Using environment.in.properties</echo>
+                     
+                     <delete file="${project.build.outputDirectory}/environment.properties"/>
+                     
+                     <delete file="${project.build.outputDirectory}/environment.us.properties"/>
+                     <delete file="${project.build.outputDirectory}/environment.ir.properties"/>
             <copy file="src/main/resources/environment.in.properties" tofile
 		    ="${project.build.outputDirectory}/environment.properties"/>
+		    <delete file="${project.build.outputDirectory}/environment.in.properties"/>
+                     
                   </tasks>
                   </configuration>
                </execution>
             </executions>
+         </plugin>
+         <plugin>
+           <artifactId>maven-surefire-plugin</artifactId>
+           <configuration>
+             <skip>true</skip>
+           </configuration>
+         </plugin>
+         <plugin>
+           <artifactId>maven-war-plugin</artifactId>
+           <executions>
+             <execution>
+               <phase>package</phase>
+               <goals>
+                 <goal>war</goal>
+               </goals>
+               <configuration>
+                 <classifier>in</classifier>
+               </configuration>
+             </execution>
+           </executions>
+         
+         
          </plugin>
       </plugins>
       </build>
@@ -46,19 +75,46 @@
             <version>1.1</version>
             <executions>
                <execution>
-                  <phase>us</phase>
+                  <phase>test</phase>
                   <goals>
                      <goal>run</goal>
                   </goals>
                   <configuration>
                   <tasks>
                      <echo>Using environment.us.properties</echo>
+                      <delete file="${project.build.outputDirectory}/environment.properties"/>
+                     <delete file="${project.build.outputDirectory}/environment.in.properties"/>
+                     <delete file="${project.build.outputDirectory}/environment.ir.properties"/>
             <copy file="src/main/resources/environment.us.properties" tofile
 		    ="${project.build.outputDirectory}/environment.properties"/>
+		    <delete file="${project.build.outputDirectory}/environment.us.properties"/>
+                     
                   </tasks>
                   </configuration>
                </execution>
             </executions>
+         </plugin>
+         <plugin>
+           <artifactId>maven-surefire-plugin</artifactId>
+           <configuration>
+             <skip>true</skip>
+           </configuration>
+         </plugin>
+         <plugin>
+           <artifactId>maven-war-plugin</artifactId>
+           <executions>
+             <execution>
+               <phase>package</phase>
+               <goals>
+                 <goal>war</goal>
+               </goals>
+               <configuration>
+                 <classifier>us</classifier>
+               </configuration>
+             </execution>
+           </executions>
+         
+         
          </plugin>
       </plugins>
       </build>
@@ -76,19 +132,40 @@
             <version>1.1</version>
             <executions>
                <execution>
-                  <phase>ir</phase>
+                  <phase>test</phase>
                   <goals>
                      <goal>run</goal>
                   </goals>
                   <configuration>
                   <tasks>
                      <echo>Using environment.ir.properties</echo>
+                      <delete file="${project.build.outputDirectory}/environment.properties"/>
+                     <delete file="${project.build.outputDirectory}/environment.us.properties"/>
+                     <delete file="${project.build.outputDirectory}/environment.in.properties"/>
             <copy file="src/main/resources/environment.ir.properties" tofile
 		    ="${project.build.outputDirectory}/environment.properties"/>
+		    <delete file="${project.build.outputDirectory}/environment.ir.properties"/>
+                     
                   </tasks>
                   </configuration>
                </execution>
             </executions>
+         </plugin>
+                  <plugin>
+           <artifactId>maven-war-plugin</artifactId>
+           <executions>
+             <execution>
+               <phase>package</phase>
+               <goals>
+                 <goal>war</goal>
+               </goals>
+               <configuration>
+                 <classifier>ir</classifier>
+               </configuration>
+             </execution>
+           </executions>
+         
+         
          </plugin>
       </plugins>
       </build>

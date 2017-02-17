@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="<c:url value="/resources/css/indexStyle.css" />" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	   
     <!--[if lt IE 9]>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -21,7 +23,7 @@
         <div class="col-sm-6">
             <div>
                 <a class="btn btn-success" href="<c:url value="/login" />">Login</a>
-                <a class="btn btn-info" href="">Register</a>
+                <a class="btn btn-info" href="<c:url value="/register" />">Register</a>
             </div>
         </div>
     </header>
@@ -32,6 +34,9 @@
         
         <div class="col-sm-6">
         </div>
+        
+          
+        
     </main>
     <footer>
         <hr>

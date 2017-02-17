@@ -62,9 +62,9 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-		return "Person [unique_id=" + unique_id + ", name=" + name + ", dob="
-				+ dob + ", mobile_no=" + mobile_no + ", city=" + city
-				+ ", state=" + state + "]";
+		return "{\"Person\":{\"unique_id\":\"" + unique_id + "\", \"name\":\"" + name + "\", \"dob\":\""
+				+ dob + "\", \"mobile_no\":\"" + mobile_no + "\", \"city\":\"" + city
+				+ "\", \"state\":\"" + state + "\"}}";
 	}
 	
 	

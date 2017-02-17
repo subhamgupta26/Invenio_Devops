@@ -13,7 +13,7 @@ $(document).ready(function() {
         tabSelect(num);
     });
     tabsMeta.tabSet.click();
-    $("#searchBtn").click(searchFunc);
+    $("#pers").submit(searchFunc);
     
     //--------------Initializations---------------------------
 
@@ -29,7 +29,7 @@ function tabSelect(num) {
         if(tabsMeta.tabSet.attr("data") == 0) {
         $(".tabWork .frams").html("Loading...");
             $.ajax({
-                url: "/crime?id=",
+                url: tabsMeta.tabSet.attr("url")+"?id="+$(".tabWork").attr("record"),
                 success: function(result){
                     $("#data-"+num).html(result);
                     tabsMeta.tabSet.attr("data","1");
@@ -58,8 +58,9 @@ function recordSet(num) {
 }
 
 function searchFunc() {
-    var q = $("#queryInput").val();
+    var q = $(".searchbar").val();
     $(".tabWork").attr("record",q);
     tabsMeta.tabSet.attr("data","0");
     tabsMeta.tabSet.click();
+    return false;
 }

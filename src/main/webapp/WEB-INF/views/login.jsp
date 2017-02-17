@@ -11,7 +11,8 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
    <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css" />" />
-	
+	  <link rel="stylesheet" href="<c:url value="/resources/css/demo.css" />" />
+		
 <style type="text/css">
 
 html,
@@ -31,17 +32,27 @@ body {
 }
   #login-page{
   width:400px;
-    
+    height: 100%;
   }
+  #demo-canvas {
+  	position: absolute;
+  	left: 0px;
+  	top: 0px;
+  }
+  
 </style>
   
 </head>
 
 <body class="white" style="background-image: url('<c:url value="/resources/images/acb.jpg" />')">
 	
+	<div class="container demo-1">
+			<div class="content">
+	
 	<div id="large-header" class="large-header">
-		<canvas id="demo-canvas"></canvas>
-	</div>
+		<canvas id="demo-canvas">
+		</canvas>
+	
 	
   <div id="login-page" class="row">
     <div class="col s12 z-depth-6 card-panel">
@@ -87,10 +98,11 @@ body {
               <p class="margin right-align medium-small"><a href="forgot-password.html">Forgot password?</a></p>
           </div>          
         </div>
-
+	
       </f:form>
       
- 
+ 		 </div> </div></div>
+ 	
      
     </div>
   </div>

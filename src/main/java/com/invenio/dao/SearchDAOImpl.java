@@ -20,7 +20,7 @@ public class SearchDAOImpl implements SearchDao {
 	@Autowired
 	JdbcTemplate template;
 	
-	
+}
 	public JdbcTemplate getTemplate() {
 		return template;
 	}

@@ -1,6 +1,6 @@
 package com.invenio.bean;
 
-public class Credit {
+public class Credit    {
 
 	 private long creditId,uniqueId,accountNo,balance;
 	 private String bankName;

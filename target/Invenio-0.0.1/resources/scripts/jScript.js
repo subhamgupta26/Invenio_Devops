@@ -31,6 +31,7 @@ function tabSelect(num) {
             $.ajax({
                 url: tabsMeta.tabSet.attr("url")+"?id="+$(".tabWork").attr("record"),
                 success: function(result){
+                	alert(result);
                     $("#data-"+num).html(result);
                     tabsMeta.tabSet.attr("data","1");
                     recordSet(num);

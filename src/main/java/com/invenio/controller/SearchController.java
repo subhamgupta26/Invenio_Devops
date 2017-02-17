@@ -49,45 +49,47 @@ public class SearchController {
 		if(x!=null){
 			System.out.println("Person details verified");
 			m.addAttribute("pers2",x);
-			return "detailsDisplay";
+			return "person";
 			
 		}
 		
 		System.out.println("not here");
 		
-		return "redirect:/search";
+		return "notfound";
 	}
 	
 	@RequestMapping(value="/credit",method=RequestMethod.GET)
-	public String showCreditSearch(@RequestParam String id,Model model){
+	public String showCreditSearch(@RequestParam String unique_id,Model model){
 		
 		System.out.println("In Search Controller");
-		long uniqueid=Long.parseLong(id);
+		long uniqueid=Long.parseLong(unique_id);
 		Person pp1=new Person();
 		pp1.setUnique_id(uniqueid);
 		Person pp=sservice.checkPerson(pp1);
+		if(pp == null)
+			return "notfound";
 		List<Credit> credits=sservice.checkCreditofPerson(uniqueid);
 		model.addAttribute("cred",credits);
 		model.addAttribute("pers2",pp);
-		
-		
-		return "detailsDisplay";
+		return "credit";
 	} 
 	
 	@RequestMapping(value="/crime",method=RequestMethod.GET)
-	public String showSearchCriminal(@RequestParam String id,Model model){
+	public String showSearchCriminal(@RequestParam String unique_id,Model model){
 		
 		System.out.println("In Search Controller");
-		long uniqueid=Long.parseLong(id);
+		long uniqueid=Long.parseLong(unique_id);
 		Person pp1=new Person();
 		pp1.setUnique_id(uniqueid);
 		Person pp=sservice.checkPerson(pp1);
+		if(pp == null)
+			return "notfound";
 		List<Criminal> crimes=sservice.checkCrimeofPerson(uniqueid);
 		model.addAttribute("crim",crimes);
 		model.addAttribute("pers2",pp);
 		
 		
-		return "detailsDisplay";
+		return "criminal";
 	} 
 	
 

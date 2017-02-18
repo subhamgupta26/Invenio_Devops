@@ -45,6 +45,7 @@ body {
 </head>
 
 <body class="white" style="background-image: url('<c:url value="/resources/images/acb.jpg" />')">
+testing
 	
 	<div class="container demo-1">
 			<div class="content">

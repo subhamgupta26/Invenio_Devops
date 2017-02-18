@@ -29,7 +29,8 @@ function tabSelect(num) {
         if(tabsMeta.tabSet.attr("data") == 0) {
         $(".tabWork .frams").html("Loading...");
             $.ajax({
-                url: tabsMeta.tabSet.attr("url")+"?id="+$(".tabWork").attr("record"),
+                url: tabsMeta.tabSet.attr("url")+"?unique_id="+$(".tabWork").attr("record"),
+                method:tabsMeta.tabSet.attr("meth"),
                 success: function(result){
                 	alert(result);
                     $("#data-"+num).html(result);

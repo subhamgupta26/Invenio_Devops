@@ -1,4 +1,4 @@
-<table>
+<table class="table table-striped">
 	<tr>
 		<td>ID</td><td>${pers2.getUnique_id() }</td>
 	</tr>

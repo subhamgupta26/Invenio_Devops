@@ -57,7 +57,7 @@ public class AdminController {
 		
 		 redirectAttributes.addFlashAttribute("dataForNextPage", pid);
 				 
-			return "redirect:/search.do";
+			return "redirect:/search";
 			
 			
 			

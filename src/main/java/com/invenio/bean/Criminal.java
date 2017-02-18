@@ -2,7 +2,7 @@ package com.invenio.bean;
 
 import java.sql.Date;
 
-public class Criminal {
+public class Criminal {//comment
 
 
 	  

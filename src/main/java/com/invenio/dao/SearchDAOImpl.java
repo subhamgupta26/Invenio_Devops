@@ -70,7 +70,7 @@ public class SearchDAOImpl implements SearchDao {
 	
 	public List<Credit> findCreditRecord(long uniqueid) {
 		
-		System.out.println("Here In Search impl");
+		System.out.println("Here it is In Search impl");
 		List<Credit> credits=new ArrayList<Credit>();
 	try{
 		

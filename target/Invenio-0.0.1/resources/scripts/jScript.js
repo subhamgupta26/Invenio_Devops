@@ -15,8 +15,10 @@ $(document).ready(function() {
     tabsMeta.tabSet.click();
     $("#pers").submit(searchFunc);
     
+    document.getElementById("pers").addEventListener("submit", adjustPage);
+    
     //--------------Initializations---------------------------
-
+    
     $('[data-toggle="tooltip"]').tooltip();
 });
 
@@ -65,4 +67,12 @@ function searchFunc() {
     tabsMeta.tabSet.attr("data","0");
     tabsMeta.tabSet.click();
     return false;
+}
+
+function adjustPage() {
+	$("header").css({"height":"50px"});
+	$("#searchContainer").css({"padding":""});
+	$("main").fadeIn(1000);
+	$("#logo1").fadeOut(500);
+	$("#logo2").fadeIn(1000);
 }

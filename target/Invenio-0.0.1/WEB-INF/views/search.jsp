@@ -38,13 +38,20 @@ else{
     	var logourl = "<c:url value="/resources/images/logo.png" />";
     </script>
 </head>
-<body>
-    <header>
+<fmt:bundle basename="environment">
+<body style="background-image: url('<c:url value="/resources/images/" /><fmt:message key="env.flag_image"/>')"></fmt:bundle>
+    <header style="height: 100%;">
+      
         <div class="row">
-            <div class="col-sm-3"><img height="35" src="<c:url value="/resources/images/logo2.jpg" />" alt="logo" /></div>
-            <div class="col-sm-6" id="searchContainer">
+            <div class="col-sm-3"><img style="display:none" id="logo2" height="35" src="<c:url value="/resources/images/logo2.jpg" />" alt="logo" /></div>
+            <div class="col-sm-6" id="searchContainer" style="padding-top: 18%;">
+            	<div style="padding-bottom:20px;" id="logo1"><img src="<c:url value="/resources/images/logo2.jpg" />" alt=""></div>
            <f:form modelAttribute="pers" method="post" >
+<<<<<<< HEAD
+                <div id="searchBox" class="form-group"><input placeholder="Search" type="text" class="searchbar form-control" name="unique_id" id="unique_id" required/>
+=======
                 <div id="searchBox" class="form-group"><f:input type="text" class="searchbar form-control"  path="unique_id" />
+>>>>>>> origin/master
                 <button type="submit" data-toggle="tooltip" data-placement="bottom" title="Search" id="searchBtn" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
             </f:form>
             </div>
@@ -60,8 +67,7 @@ else{
             </div>
         </div>
     </header>
-     <fmt:bundle basename="environment">
-    <main style="background-image: url('<c:url value="/resources/images/" /><fmt:message key="env.flag_image"/>')"></fmt:bundle>
+    <main style="display: none;">
         <div id="displayBox">
             <div>
                 <div class="tabWork" record="">

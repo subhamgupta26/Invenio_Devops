@@ -1,0 +1,25 @@
+header {
+    height: 150px;
+    padding: 50px;
+}
+header>div {
+    display: inline-block;
+}
+header>div:last-child {
+    text-align: right;
+}
+main {
+    height: 600px;
+    background-size: cover;
+}
+main>div {
+    display: inline-block;
+}
+main>div:first-child {
+    padding: 50px;
+    font-size: 46px;
+    color: white;
+}
+footer {
+    padding: 50px;
+}

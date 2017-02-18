@@ -15,6 +15,7 @@ header {
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
     -webkit-transition: height 1s;
+    transition: height 1s;
 }
 
 header .row>div:nth-child(1) {
@@ -31,15 +32,14 @@ header .row>div:last-child>div{
 }
 
 main {
-    background-repeat: no-repeat;
-    height: 100%;
     text-align: center;
-    margin-bottom: 100px;
 }
 
 #searchContainer {
     text-align: center;
     height: 30px;
+    -webkit-transition: padding 1s;
+    transition: padding 1s;
 }
 #searchBox {
     display: inline-block;
@@ -129,8 +129,21 @@ footer a {
 .tabWork .frams table{
 	display: inline-block;
 	text-align: left;
-	border: 2px solid #0094ff;
+	background-color: #333;
+	color: white;
 }
+
+.tabWork .frams table tr{
+	border-bottom: 1px solid #ccc;
+}
+.tabWork .frams table tr>td:first-child{
+	font-weight: bold;
+	color: #ffcc44;
+}
+
 .tabWork .frams table td, .tabWork .frams table th {
-	font-size: 24px;
+	
+	
+	font-size: 16px;
+	padding: 10px 40px;
 }

@@ -18,8 +18,6 @@ $(document).ready(function() {
     document.getElementById("pers").addEventListener("submit", adjustPage);
     
     //--------------Initializations---------------------------
-    
-    $('[data-toggle="tooltip"]').tooltip();
 });
 
 //--------------------Functions Definition

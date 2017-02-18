@@ -70,9 +70,9 @@ function searchFunc() {
 }
 
 function adjustPage() {
+	$("#logo1").remove();
 	$("header").css({"height":"50px"});
-	$("#searchContainer").css({"padding":""});
+	$("#searchContainer").css({"padding":"0px"});
 	$("main").fadeIn(1000);
-	$("#logo1").fadeOut(500);
 	$("#logo2").fadeIn(1000);
 }

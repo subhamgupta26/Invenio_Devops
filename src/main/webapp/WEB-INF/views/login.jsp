@@ -47,7 +47,6 @@ body {
 </head>
 
 <body class="white" style="background-image: url('<c:url value="/resources/images/acb.jpg" />')">
-testing
 	
 	<div class="container demo-1">
 			<div class="content">
@@ -79,12 +78,6 @@ testing
             <label for="password">Password</label>
           </div>
         </div>
-        <div class="row">          
-          <div class="input-field col s12 m12 l12  login-text">
-              <input type="checkbox" id="remember-me" />
-              <label for="remember-me">Remember me</label>
-          </div>
-        </div>
         
         <div class="row">
           <div class="input-field col s12">
@@ -93,15 +86,6 @@ testing
           </div>
         </div>
         
-        <div class="row">
-          <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="register.html">Register Now!</a></p>
-          </div>
-          <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="forgot-password.html">Forgot password?</a></p>
-          </div>          
-        </div>
-	
       </f:form>
       
  		 </div> </div></div>

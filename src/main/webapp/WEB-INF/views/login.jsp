@@ -41,13 +41,16 @@ body {
   	left: 0px;
   	top: 0px;
   }
-  
+  .alert-box{
+  text-align: center;
+  color: red;
+  }
 </style>
   
 </head>
 
 <body class="white" style="background-image: url('<c:url value="/resources/images/acb.jpg" />')">
-	
+
 	<div class="container demo-1">
 			<div class="content">
 	
@@ -59,12 +62,24 @@ body {
   <div id="login-page" class="row">
     <div class="col s12 z-depth-6 card-panel">
       <f:form modelAttribute="pes" class="login-form" method="POST">
+      
+	
         
         <div class="row">
           <div class="input-field col s12 center">
             <img src="<c:url value="/resources/images/logo.png" />" alt="" class="responsive-img valign profile-image-login">
           </div>
         </div>
+        
+              <%
+	boolean val=(Boolean)request.getAttribute("status");
+if(!val){
+	%>
+	 <p class="alert-box">Invalid Username or Password</p>
+<% 
+}
+
+%>
         
         <div class="row margin">
           <div class="input-field col s12">

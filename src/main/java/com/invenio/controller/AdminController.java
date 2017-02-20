@@ -15,6 +15,7 @@ import com.invenio.service.SignInService;
 @Controller
 public class AdminController {
 
+	static boolean x=true;
 	@Autowired
 	private SignInService service;
 	
@@ -33,18 +34,20 @@ public class AdminController {
 		
 		Admin p = new Admin();
 		model.addAttribute("pes",p);
-		
+		model.addAttribute("status",x );
+
 		
 		return "login";
 	}
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String s(Admin person,RedirectAttributes redirectAttributes){
+	public String s(Admin person,RedirectAttributes redirectAttributes,Model model){
 		
 		System.out.println(person);
 		System.out.println("In Controller");
-		boolean x=service.checkSignIn(person);
+		x=service.checkSignIn(person);
 		System.out.println(x);
+		model.addAttribute("status",x );
 		if(x){
 			System.out.println("verified");
 	
@@ -60,6 +63,7 @@ public class AdminController {
 		else{
 			System.out.println("not verified");
 		}
+		model.addAttribute("status",x );
 		return "redirect:/login";
 	}
 	

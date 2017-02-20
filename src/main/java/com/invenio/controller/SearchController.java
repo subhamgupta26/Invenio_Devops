@@ -43,6 +43,8 @@ public class SearchController {
 	
 	@RequestMapping(value="/search",method=RequestMethod.POST)
 	public String findPerson(Person p,Model m){
+		
+	
 		System.out.println("In FIND Person");
 		Person x=sservice.checkPerson(p);
 		System.out.println(p.getName());
@@ -62,10 +64,20 @@ public class SearchController {
 	public String showCreditSearch(@RequestParam String unique_id,Model model){
 		
 		System.out.println("In Search Controller");
-		long uniqueid=Long.parseLong(unique_id);
 		Person pp1=new Person();
+		Person pp=new Person();
+		long uniqueid=0L;
+		try{
+		uniqueid=Long.parseLong(unique_id);
+		
 		pp1.setUnique_id(uniqueid);
-		Person pp=sservice.checkPerson(pp1);
+		pp=sservice.checkPerson(pp1);
+		}
+		catch(NumberFormatException nfe){
+			return "notfound";
+			
+		}
+		
 		if(pp == null)
 			return "notfound";
 		List<Credit> credits=sservice.checkCreditofPerson(uniqueid);
@@ -78,12 +90,24 @@ public class SearchController {
 	public String showSearchCriminal(@RequestParam String unique_id,Model model){
 		
 		System.out.println("In Search Controller");
-		long uniqueid=Long.parseLong(unique_id);
 		Person pp1=new Person();
+		Person pp=new Person();
+		long uniqueid=0L;
+		try{
+		uniqueid=Long.parseLong(unique_id);
+		
 		pp1.setUnique_id(uniqueid);
-		Person pp=sservice.checkPerson(pp1);
-		if(pp == null)
+		pp=sservice.checkPerson(pp1);
+		}
+		catch(NumberFormatException nfe){
 			return "notfound";
+			
+		}
+		
+		
+		if(pp == null){
+			return "notfound";
+		}
 		List<Criminal> crimes=sservice.checkCrimeofPerson(uniqueid);
 		model.addAttribute("crim",crimes);
 		model.addAttribute("pers2",pp);

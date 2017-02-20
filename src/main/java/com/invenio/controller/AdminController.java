@@ -79,6 +79,12 @@ public class AdminController {
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String Register(Admin a){
 		System.out.println(a);
+
+
+
+
+
+
 		System.out.println("In register Controller");
 		
 		service.registerPerson(a);

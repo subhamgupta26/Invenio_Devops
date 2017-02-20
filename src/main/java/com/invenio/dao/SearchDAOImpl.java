@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -17,6 +18,7 @@ import com.invenio.bean.Person;
 @Repository(value="sdao")
 public class SearchDAOImpl implements SearchDao {
 
+	@Value("${uniqueid}") private String uid;
 	@Autowired
 	JdbcTemplate template;
 	
@@ -36,7 +38,7 @@ public class SearchDAOImpl implements SearchDao {
 		Person p1=null;
 	try{
 		
-		p1=template.queryForObject("select * from person where aadhar_id="+p.getUnique_id(),
+		p1=template.queryForObject("select * from person where "+uid+ "="+p.getUnique_id(),
 	
 				
 				
@@ -74,7 +76,7 @@ public class SearchDAOImpl implements SearchDao {
 		List<Credit> credits=new ArrayList<Credit>();
 	try{
 		
-		credits= template.query("select * from credit where aadhar_id="+uniqueid, new RowMapper<Credit>(){
+		credits= template.query("select * from credit where "+uid+ "="+uniqueid, new RowMapper<Credit>(){
 
 			@Override
 			public Credit mapRow(ResultSet rs, int rownum)
@@ -111,7 +113,7 @@ public class SearchDAOImpl implements SearchDao {
 		List<Criminal> crimes=new ArrayList<Criminal>();
 	try{
 		
-		crimes= template.query("select * from criminal where aadhar_id="+uniqueid, new RowMapper<Criminal>(){
+		crimes= template.query("select * from criminal where "+uid+ "="+uniqueid, new RowMapper<Criminal>(){
 
 			@Override
 			public Criminal mapRow(ResultSet rs, int rownum)
@@ -141,7 +143,5 @@ public class SearchDAOImpl implements SearchDao {
 	return crimes;
 		
 	}
-	
-	 
 
 }

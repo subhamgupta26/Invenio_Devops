@@ -59,11 +59,13 @@ body {
   <div id="login-page" class="row">
     <div class="col s12 z-depth-6 card-panel">
       <f:form modelAttribute="pes" class="login-form" method="POST">
-         <div class="row">
+        
+        <div class="row">
           <div class="input-field col s12 center">
             <img src="<c:url value="/resources/images/logo.png" />" alt="" class="responsive-img valign profile-image-login">
           </div>
         </div>
+        
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
@@ -71,6 +73,7 @@ body {
             <label for="email" class="center-align">Email</label>
           </div>
         </div>
+        
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
@@ -78,6 +81,8 @@ body {
             <label for="password">Password</label>
           </div>
         </div>
+        <br>
+        
         
         <div class="row">
           <div class="input-field col s12">
@@ -85,6 +90,7 @@ body {
             <!--  <a href="login.html" class="btn waves-effect waves-light col s12">Login</a>-->
           </div>
         </div>
+        <br>
         
       </f:form>
       

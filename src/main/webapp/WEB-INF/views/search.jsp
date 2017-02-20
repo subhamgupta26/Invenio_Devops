@@ -7,7 +7,18 @@
 <%
 
 	String name=(String)request.getAttribute("uid");
+
+	System.out.println(name+"outside");
+if(name.equals("")){
+	name=(String)session.getAttribute("name");
+	if(name==null){
+	System.out.println(name+"inside");
+	response.sendRedirect("login");
+	}
+}
+else{
    session.setAttribute( "name", name );
+}
    
 %>
 <html lang="en">
@@ -27,14 +38,17 @@
     	var logourl = "<c:url value="/resources/images/logo.png" />";
     </script>
 </head>
-<body>
-    <header>
+<fmt:bundle basename="environment">
+<body style="background-image: url('<c:url value="/resources/images/" /><fmt:message key="env.flag_image"/>')"></fmt:bundle>
+    <header style="height: 100%;">
+      
         <div class="row">
-            <div class="col-sm-3"><img height="35" src="<c:url value="/resources/images/logo2.jpg" />" alt="logo" /></div>
-            <div class="col-sm-6" id="searchContainer">
+            <div class="col-sm-3"><img style="display:none" id="logo2" height="35" src="<c:url value="/resources/images/logo2.png" />" alt="logo" /></div>
+            <div class="col-sm-6" id="searchContainer" style="padding-top: 24%;">
+            	<div style="padding-bottom:20px;position:absolute; top: 230px; width: 100%" id="logo1"><img src="<c:url value="/resources/images/logo2.png" />" alt=""></div>
            <f:form modelAttribute="pers" method="post" >
-                <div id="searchBox" class="form-group"><f:input type="text" class="searchbar form-control"  path="unique_id"/>
-                <button type="submit" data-toggle="tooltip" data-placement="bottom" title="Search" id="searchBtn" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
+                <div id="searchBox" class="form-group"><input placeholder="Search" type="text" class="searchbar form-control" name="unique_id" id="unique_id" required/>
+                <button type="submit" data-placement="bottom" id="searchBtn" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
             </f:form>
             </div>
             <div class="col-sm-3">
@@ -42,15 +56,14 @@
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><%=session.getAttribute("name") %>                       <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                        <li><a href="#">Sign Out</a></li>
+                        <li><a href="<c:url value="/login" />">Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-     <fmt:bundle basename="environment">
-    <main style="background-image: url('<c:url value="/resources/images/" /><fmt:message key="env.flag_image"/>')"></fmt:bundle>
+    <main style="display: none;">
         <div id="displayBox">
             <div>
                 <div class="tabWork" record="">

@@ -1,7 +1,9 @@
 body {
     margin: 0px;
     height: 100%;
-    
+     background-size:cover;
+    background-position: center; 
+     
 }
 
 html{
@@ -9,13 +11,16 @@ html{
 }
 
 header {
-    background-color: white;
+    background-color: rgba(255, 255, 255, .5);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
+    -webkit-transition: height 1s;
+    transition: height 1s;
 }
 
 header .row>div:nth-child(1) {
     text-align: center;
+    height: 100%;
 }
 
 header .row>div:last-child{
@@ -27,15 +32,14 @@ header .row>div:last-child>div{
 }
 
 main {
-    background-size:cover;
-    background-repeat: no-repeat;
-    height: 100%;
     text-align: center;
 }
 
 #searchContainer {
     text-align: center;
     height: 30px;
+    -webkit-transition: padding 1s;
+    transition: padding 1s;
 }
 #searchBox {
     display: inline-block;
@@ -85,6 +89,8 @@ main {
     border: 3px solid #0094ff;
     background-color: rgba(255, 255, 255, .9);
     box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    text-align: center;
+    padding: 50px;
 }
 #form-data {
     display: none;
@@ -112,8 +118,32 @@ footer {
     width: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
     color: white;
+    position: fixed;
+    bottom: 0px;
 }
 footer a {
     color: white;
     cursor: pointer;
+}
+
+.tabWork .frams table{
+	display: inline-block;
+	text-align: left;
+	background-color: #333;
+	color: white;
+}
+
+.tabWork .frams table tr{
+	border-bottom: 1px solid #ccc;
+}
+.tabWork .frams table tr>td:first-child{
+	font-weight: bold;
+	color: #ffcc44;
+}
+
+.tabWork .frams table td, .tabWork .frams table th {
+	
+	
+	font-size: 16px;
+	padding: 10px 40px;
 }

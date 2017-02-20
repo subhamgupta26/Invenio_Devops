@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="f" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<% session.invalidate(); %>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -45,7 +47,6 @@ body {
 </head>
 
 <body class="white" style="background-image: url('<c:url value="/resources/images/acb.jpg" />')">
-testing
 	
 	<div class="container demo-1">
 			<div class="content">
@@ -58,11 +59,13 @@ testing
   <div id="login-page" class="row">
     <div class="col s12 z-depth-6 card-panel">
       <f:form modelAttribute="pes" class="login-form" method="POST">
-         <div class="row">
+        
+        <div class="row">
           <div class="input-field col s12 center">
             <img src="<c:url value="/resources/images/logo.png" />" alt="" class="responsive-img valign profile-image-login">
           </div>
         </div>
+        
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
@@ -70,6 +73,7 @@ testing
             <label for="email" class="center-align">Email</label>
           </div>
         </div>
+        
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
@@ -77,12 +81,8 @@ testing
             <label for="password">Password</label>
           </div>
         </div>
-        <div class="row">          
-          <div class="input-field col s12 m12 l12  login-text">
-              <input type="checkbox" id="remember-me" />
-              <label for="remember-me">Remember me</label>
-          </div>
-        </div>
+        <br>
+        
         
         <div class="row">
           <div class="input-field col s12">
@@ -90,16 +90,8 @@ testing
             <!--  <a href="login.html" class="btn waves-effect waves-light col s12">Login</a>-->
           </div>
         </div>
+        <br>
         
-        <div class="row">
-          <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="register.html">Register Now!</a></p>
-          </div>
-          <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="forgot-password.html">Forgot password?</a></p>
-          </div>          
-        </div>
-	
       </f:form>
       
  		 </div> </div></div>

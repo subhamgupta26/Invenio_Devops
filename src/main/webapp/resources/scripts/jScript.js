@@ -15,9 +15,9 @@ $(document).ready(function() {
     tabsMeta.tabSet.click();
     $("#pers").submit(searchFunc);
     
+    document.getElementById("pers").addEventListener("submit", adjustPage);
+    
     //--------------Initializations---------------------------
-
-    $('[data-toggle="tooltip"]').tooltip();
 });
 
 //--------------------Functions Definition
@@ -65,4 +65,12 @@ function searchFunc() {
     tabsMeta.tabSet.attr("data","0");
     tabsMeta.tabSet.click();
     return false;
+}
+
+function adjustPage() {
+	$("#logo1").remove();
+	$("header").css({"height":"50px"});
+	$("#searchContainer").css({"padding":"0px"});
+	$("main").fadeIn(1000);
+	$("#logo2").fadeIn(1000);
 }

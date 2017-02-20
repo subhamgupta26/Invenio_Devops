@@ -15,9 +15,9 @@ $(document).ready(function() {
     tabsMeta.tabSet.click();
     $("#pers").submit(searchFunc);
     
+    document.getElementById("pers").addEventListener("submit", adjustPage);
+    
     //--------------Initializations---------------------------
-
-    $('[data-toggle="tooltip"]').tooltip();
 });
 
 //--------------------Functions Definition
@@ -28,11 +28,11 @@ function tabSelect(num) {
     if($(".tabWork").attr("record").length != 0) {
         if(tabsMeta.tabSet.attr("data") == 0) {
         $(".tabWork .frams").html("Loading...");
-            $.ajax({
-                url: tabsMeta.tabSet.attr("url")+"?unique_id="+$(".tabWork").attr("record"),
+        var urll = tabsMeta.tabSet.attr("url")+"?unique_id="+$(".tabWork").attr("record");
+        $.ajax({
+                url: urll,
                 method:tabsMeta.tabSet.attr("meth"),
                 success: function(result){
-                	alert(result);
                     $("#data-"+num).html(result);
                     tabsMeta.tabSet.attr("data","1");
                     recordSet(num);
@@ -54,7 +54,7 @@ function tabSelect(num) {
 }
 
 function recordSet(num) {
-    data = $("#data-"+num).text();
+    data = $("#data-"+num).html();
     post = data;
     $(".tabWork .frams").html(post);
 }
@@ -65,4 +65,12 @@ function searchFunc() {
     tabsMeta.tabSet.attr("data","0");
     tabsMeta.tabSet.click();
     return false;
+}
+
+function adjustPage() {
+	$("#logo1").remove();
+	$("header").css({"height":"50px"});
+	$("#searchContainer").css({"padding":"0px"});
+	$("main").fadeIn(1000);
+	$("#logo2").fadeIn(1000);
 }

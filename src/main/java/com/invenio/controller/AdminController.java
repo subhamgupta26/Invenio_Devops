@@ -15,7 +15,7 @@ import com.invenio.service.SignInService;
 
 @Controller
 public class AdminController {
-	 @Value("${env.background_image}") private String attr;
+	// @Value("${env.background_image}") private String attr;
 
 	//ApplicationContext context = new ClassPathXmlApplicationContext("control-servlet.xml");
 	//SignInService service = (SignInService) context.getBean("service");

@@ -55,7 +55,7 @@ public class SearchController {
 			
 		}
 		
-		System.out.println("not here");
+		System.out.println("It is not here");
 		
 		return "notfound";
 	}

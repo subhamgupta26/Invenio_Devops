@@ -6,20 +6,23 @@ header>div {
     display: inline-block;
 }
 header>div:last-child {
-    text-align: right;
+    //text-align: right;
 }
 main {
     height: 600px;
-    background-size: cover;
-}
-main>div {
-    display: inline-block;
-}
-main>div:first-child {
-    padding: 50px;
-    font-size: 46px;
-    color: white;
+    position: relative;
+    overflow: hidden;
 }
 footer {
     padding: 50px;
 }
+#wel-txt {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	font-size: 36px;
+	color: white;
+}
+  .carousel-inner > .item {
+      height: 600px;
+  }

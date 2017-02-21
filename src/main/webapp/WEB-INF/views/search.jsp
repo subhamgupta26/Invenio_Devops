@@ -47,7 +47,7 @@ else{
             <div class="col-sm-6" id="searchContainer" style="padding-top: 24%;">
             	<div style="padding-bottom:20px;position:absolute; top: 230px; width: 100%" id="logo1"><img src="<c:url value="/resources/images/logo2.png" />" alt=""></div>
            <f:form modelAttribute="pers" method="post" >
-                <div id="searchBox" class="form-group"><input placeholder="Search" type="number" class="searchbar form-control" name="unique_id" id="unique_id" required/>
+                <div id="searchBox" class="form-group"><input placeholder="Search" type="number" class="searchbar form-control" name="unique_id" id="unique_id" maxlength="12" required/>
                 <button type="submit" data-placement="bottom" id="searchBtn" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></div>
             </f:form>
             </div>

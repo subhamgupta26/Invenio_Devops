@@ -77,8 +77,8 @@ INSERT INTO `credit` (`credit_id`, `aadhar_id`, `accountno`, `bankname`, `balanc
 (13, 876543996542, 5236785412, 'Axis', 70000),
 (14, 987625551200, 12589637412, 'Adarsh Credit Co', 170000),
 (15, 963625641032, 896303741123, 'SBI', 7890023),
-(16, 963625641032, 596303741123, 'HDFC', 7890023),
-(17, 963625641032, 496303741123, 'Kotak', 7890023);
+(16, 963625641032, 596303741123, 'HDFC', 87890023),
+(17, 963625641032, 496303741123, 'Kotak', 97890023);
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,10 @@ INSERT INTO `criminal` (`criminal_id`, `aadhar_id`, `date`, `place`, `report`) V
 (7, 741258501230, '2014-05-03', 'Gwalior', 'Rape Case'),
 (8, 780320580021, '2016-07-12', 'Ahemdabad', 'Caught Stealing Gold jewellery '),
 (9, 852258450236, '2010-12-07', 'Chandigarh', 'Killed one policemen'),
-(10, 120369456320, '2011-05-03', 'Nagpur', 'Illegal property case');
+(10, 120369456320, '2011-05-03', 'Nagpur', 'Illegal property case'),
+(11, 963625641032, '2012-05-03', 'Delhi', 'Illegal property case')
+(12, 963625641032, '2013-06-04', 'Mumbai', 'Robbery')
+(13, 963625641032, '2014-07-05', 'Bangalore', 'Attempt to Murder');
 
 -- --------------------------------------------------------
 

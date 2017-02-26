@@ -62,7 +62,7 @@ function recordSet(num) {
 function searchFunc() {
     var q = $(".searchbar").val();
     $(".tabWork").attr("record",q);
-    tabsMeta.tabSet.attr("data","0");
+    $(".tabWork .tabsContainer li").attr("data","0");
     tabsMeta.tabSet.click();
     return false;
 }

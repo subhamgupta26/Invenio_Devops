@@ -25,4 +25,5 @@ footer {
 }
   .carousel-inner > .item {
       height: 600px;
+      text-align: center;
   }

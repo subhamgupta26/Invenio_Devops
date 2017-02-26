@@ -187,7 +187,8 @@ ALTER TABLE `person`
 --
 ALTER TABLE `credit`
   MODIFY `credit_id` bigint(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8325;--
--- Database: `invenioire`
+-- Database: `
+e`
 --
 DROP DATABASE IF EXISTS `invenioire`;
 CREATE DATABASE IF NOT EXISTS `invenioire` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
@@ -268,7 +269,9 @@ INSERT INTO `criminal` (`criminal_id`, `ppsn`, `date`, `place`, `report`) VALUES
 (8004, 8520369, '2015-08-08', 'Dublin', 'Caught stealing jwellery'),
 (9005, 5863216, '2015-02-08', 'Wolks', 'Murder case'),
 (17854, 9517530, '2017-02-14', 'Galway', 'Shot 3 Police officers'),
-(90001, 1236985, '2002-05-05', 'Cork', 'Attempt to Murder');
+(90001, 1236985, '2002-05-05', 'Cork', 'Attempt to Murder'),
+(90002, 1236985, '2003-06-06', 'Galway', 'Drunk and drive'),
+(90003, 1236985, '2004-07-07', 'Wolks', 'Shot 2 Police officers');
 
 -- --------------------------------------------------------
 

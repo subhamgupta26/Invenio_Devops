@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Signup / Registration form using Material Design - Demo by W3lessons</title>
+  <title>Register</title>
   <!-- CORE CSS-->
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
@@ -28,6 +28,18 @@ body {
   margin: 0 !important;
 }
 </style>
+
+<script>
+	
+	function validate(evn) {
+		if(evn.password.value == evn.confirm.value)
+			return true;
+		else {
+			alert("Password and Confirm password does not match");
+			return false;
+		}
+	}
+</script>
   
 </head>
 
@@ -36,7 +48,7 @@ body {
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-6 card-panel">
-      <f:form modelAttribute="pes22" class="login-form" method="POST">
+      <f:form modelAttribute="pes22" class="login-form" method="POST" onSubmit="return validate(this);">
          <div class="row">
           <div class="input-field col s12 center">
             <img src="<c:url value="/resources/images/logo.png" />" alt="" class="responsive-img valign profile-image-login">
@@ -54,9 +66,16 @@ body {
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <f:input path="password" type="password" class="validate"/>
-           
+            <f:input path="password" type="password" required="required" class="validate"/>
             <label for="password">Password</label>
+          </div>
+        </div>
+        
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input required id="confirm" name="confirm" type="password"/>
+            <label for="confirm">Confirm Password</label>
           </div>
         </div>
      

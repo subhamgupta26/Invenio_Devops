@@ -92,10 +92,11 @@ if(!val){
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <f:input path="password" type="password"/>
+            <f:input path="password" type="password" />
             <label for="password">Password</label>
           </div>
         </div>
+        
         <br>
         
         

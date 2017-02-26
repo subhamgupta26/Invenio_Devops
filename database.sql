@@ -109,8 +109,8 @@ INSERT INTO `criminal` (`criminal_id`, `aadhar_id`, `date`, `place`, `report`) V
 (8, 780320580021, '2016-07-12', 'Ahemdabad', 'Caught Stealing Gold jewellery '),
 (9, 852258450236, '2010-12-07', 'Chandigarh', 'Killed one policemen'),
 (10, 120369456320, '2011-05-03', 'Nagpur', 'Illegal property case'),
-(11, 963625641032, '2012-05-03', 'Delhi', 'Illegal property case')
-(12, 963625641032, '2013-06-04', 'Mumbai', 'Robbery')
+(11, 963625641032, '2012-05-03', 'Delhi', 'Illegal property case'),
+(12, 963625641032, '2013-06-04', 'Mumbai', 'Robbery'),
 (13, 963625641032, '2014-07-05', 'Bangalore', 'Attempt to Murder');
 
 -- --------------------------------------------------------

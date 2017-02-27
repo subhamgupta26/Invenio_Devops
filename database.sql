@@ -349,6 +349,11 @@ CREATE TABLE `admin` (
   `password` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+INSERT INTO `admin` (`username`, `password`) VALUES
+('drake@gmail.com', 'qwerty'),
+('luke@gmail.com', 'qwerty');
+
 -- --------------------------------------------------------
 
 --

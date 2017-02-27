@@ -3,7 +3,7 @@ package com.invenio.bean;
 import org.springframework.stereotype.Component;
  
 
-public class Admin {
+public class Admin {     
 	private String username;   
 	private String password;    
 	

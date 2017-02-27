@@ -1,6 +1,7 @@
 header {
     height: 150px;
     padding: 50px;
+	background-color:black;
 }
 header>div {
     display: inline-block;

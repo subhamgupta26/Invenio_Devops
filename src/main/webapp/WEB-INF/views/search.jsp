@@ -69,7 +69,7 @@ else{
                 <div class="tabWork" record="">
                     <div class="tabsHolder">
                         <ul class="tabsContainer nav navbar-nav">
-                            <li set="0" data="0" meth="POST" url="<c:url value="/search" />"><a><span class="glyphicon glyphicon-user"></span> Person Detail</a></li>
+                            <li set="0" data="0" meth="POST" url="<c:url value="/search" />"><a><span class="glyphicon glyphicon-user"></span> Human Detail</a></li>
                             <li set="1" data="0" meth="GET" url="<c:url value="/crime" />"><a>Criminal Record</a></li>
                             <li set="2" data="0" meth="GET" url="<c:url value="/credit" />"><a><span class="glyphicon glyphicon-usd"></span> Credit Record</a></li>
                         </ul>
